@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section id="header">
+        <h2>THE GREAT COLOR GAME</h2>
+        <div id="value"></div>
+    </section>
+    <section id="prompts">
+        <div class="btn btn__secondary newBtn">
+            <p>New Game</p>
+        </div>
+        <div class="segmented-control">
+            <input type="radio" name="mode" value="3" id="tab-1" class="easyBtn" checked />
+            <label for="tab-1" class="segmented-control__1">
+                <p>Easy</p>
+            </label>
+            <input type="radio" name="mode" value="6" id="tab-2" class="hardBtn" />
+            <label for="tab-2" class="segmented-control__2">
+                <p>Hard</p>
+            </label>
+            <div class="segmented-control__color"></div>
+        </div>
+    </section>
+    <section id="content">
+        <div class="cardWrapper">
+            <div class="easyCards">
+                <div class="card easy"></div>
+                <div class="card easy"></div>
+                <div class="card easy"></div>
+            </div>
+            <div class="hardCards">
+                <div class="card hard"></div>
+                <div class="card hard"></div>
+                <div class="card hard"></div>
+            </div>
+        </div>
+    </section>
+    <section id="result">
+        Yay! You found the color!
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
