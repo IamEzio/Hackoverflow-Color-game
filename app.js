@@ -28,6 +28,18 @@ const setCardColors = function () {
         allCards[i].style.backgroundColor = colorStore[i];
 }
 
+const declareWinner = function (id) {
+    result.style.color = answer
+    result.style.opacity = "1"
+    hasPlayerWon = true;
+    allCards.forEach((card, index) => {
+        if (index != id) {
+            card.style.opacity = "0"
+            card.style.pointerEvents = "none";
+        }
+    })
+}
+
 const reset = function () {
     result.style.opacity = "0"
     setRandomColors();
@@ -38,11 +50,11 @@ const reset = function () {
         card.style.opacity = "1"
         card.style.pointerEvents = "all";
     })
-    if(mode == 6)
-    hardCards.forEach(card => {
-        card.style.opacity = "1"
-        card.style.pointerEvents = "all";
-    })
+    if (mode == 6)
+        hardCards.forEach(card => {
+            card.style.opacity = "1"
+            card.style.pointerEvents = "all";
+        })
     setCardColors();
 };
 
@@ -73,14 +85,14 @@ hardBtn.addEventListener('click', () => {
     })
 })
 
-allCards.forEach(card => {
+allCards.forEach((card, index) => {
     card.addEventListener('click', () => {
-        if (card.style.backgroundColor == answer){
-            result.style.color = answer
-            result.style.opacity = "1"
-            hasPlayerWon = true;
+        if (card.style.backgroundColor == answer) {
+            declareWinner(index)
         }
-        else if(!hasPlayerWon)
+        else if (!hasPlayerWon) {
             card.style.opacity = "0"
+            card.style.pointerEvents = "none";
+        }
     })
 })
